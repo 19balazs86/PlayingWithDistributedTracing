@@ -23,7 +23,7 @@ namespace WebApp
 
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+      services.AddControllers().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
       // Register tracer globally.
       GlobalTracer.Register(_tracer);
@@ -33,12 +33,14 @@ namespace WebApp
       services.AddOpenTracing();
     }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
       // Use custom middleware to handle exceptions.
       app.UseExceptionHandlingMiddleware();
 
-      app.UseMvc();
+      app.UseRouting();
+
+      app.UseEndpoints(endpoints => endpoints.MapControllers());
     }
   }
 }

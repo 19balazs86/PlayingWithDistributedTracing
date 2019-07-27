@@ -1,15 +1,17 @@
 # Playing with Distributed Tracing
 
-This is a small .NET Core demo application to try out distributed tracing using Jaeger and OpenTracing.
+This is a small .NET Core demo application to try out distributed tracing using `Jaeger` and `OpenTracing`.
+
+[Separate branch](https://github.com/19balazs86/PlayingWithDistributedTracing/tree/netcoreapp2.2) with the .NET Core 2.2 version.
 
 ##### What is distributed tracing
-> Distributed tracing is a method used to profile and monitor applications, especially those built using a microservices architecture. Distributed tracing helps pinpoint where failures occur and what causes poor performance.Distributed tracing is a method used to profile and monitor applications, especially those built using a microservices architecture. Distributed tracing helps pinpoint where failures occur and what causes poor performance.
+> Distributed tracing is a method used to profile and monitor applications, especially those built using a microservices architecture. Distributed tracing helps pinpoint where failures occur and what causes poor performance. Distributed tracing is a method used to profile and monitor applications, especially those built using a microservices architecture. Distributed tracing helps pinpoint where failures occur and what causes poor performance.
 
 The solution contains 3 projects.
 
 ##### Common
 - Tracer initializer.
-- Some extension methods for ITracer, ISpan in order to make the life easier.
+- Some extension methods for `ITracer`, `ISpan` in order to make the life easier.
 
 ##### WebApp
 - HelloController: The action returns with a random response (200, 400, 500...) to simulate real life cases (good or bad response).
